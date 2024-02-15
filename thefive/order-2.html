@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Five</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto+Condensed:wght@300&family=Tilt+Prism&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .container1 {
+            max-width: 1170px;
+            margin: auto;
+        }
+
+        /* Flexbox row for the footer columns */
+        .row1 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Remove list styling for the footer links */
+        ul {
+            list-style: none;
+        }
+
+        /* Styling for the footer section */
+        .footer1 {
+            background-color: black;
+            padding: 70px 0;
+        }
+
+        /* Styling for the footer columns */
+        .footer-col1 {
+            width: 25%;
+            padding: 0 15px;
+        }
+
+        /* Styling for the footer headings */
+        .footer-col1 h4 {
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 30px;
+        }
+
+        /* Styling for the heading underline */
+        .footer-col1 h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #ffffff;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+            font-weight: bold;
+        }
+
+        /* Styling for the footer links */
+        .footer-col1 ul li:not(:last-child) {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .footer-col1 ul li a {
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: black;
+            font-weight: bold;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        /* Styling for the footer link hover */
+        .footer-col1 ul li a:hover {
+            color: orange;
+            padding-left: 8px;
+            font-weight: bold;
+        }
+
+        /* Styling for the social links section */
+        .footer-col1 .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(red, green, blue, alpha);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 100%;
+            font-weight: bold;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        /* Styling for the social link hover */
+        .footer-col1 .social-links a:hover {
+            color: orange;
+            background-color: #ffffff;
+        }
+
+        .dashboard-box {
+            background-color: #fff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: crimson;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            margin-top: 20px;
+            font-weight: 200px ;
+
+
+
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bolder ;
+            margin-bottom: 5px;
+            color: rgb(0, 0, 0);
+        }
+
+        input {
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-weight:bolder ;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 2px solid rebeccapurple;
+            color: #200c01;
+        }
+
+        button {
+            background-color: #ff5e00;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff8300;
+        }
+
+        .form-response {
+            margin-left: 370px;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #ffdd57;
+            border-radius: 5px;
+            text-align: center;
+            width: 50%;
+            align-self: center;
+        }
+
+        .a {
+            position: fixed;
+            margin-left: 720px;
+            margin-top: -40px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .TEXT {
+            display: inline-block;
+            font-weight: bold;
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 50px;
+            border: 4px double orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header style="position: absolute;">
+        <a href="#" class="logo"><i class='bx bxs-home-heart'></i><span>The Five</span></a>
+
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html" class="active">Orders</a></li>
+            <li><a href="founder.html">Founders</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="background.html">Background</a></li>
+
+        </ul>
+    </header>
+    <br>
+    <br>
+    <br>
+    
+    <div class="dashboard-box">
+        <h2>Welcome, <span id="username"></span>!</h2>
+        <p>Please complete the form below to continue.</p>
+        <form action="order.html" onsubmit="handleSubmit(event)">
+            <div class="user-box">
+                <label>Name</label>
+                <input type="text" id="name" name="name" required="">
+
+            </div>
+            <div class="user-box">
+                <label>Hostel Name</label>
+                <input type="text" id="email" name="hostel" required="">
+
+            </div>
+            <div class="user-box">
+                <label>Phone Number</label>
+                <input type="tel" id="message" name="phone" required="">
+
+            </div>
+            <button type="submit" class="btn" onclick="show()">Continue</button>
+        </form>
+    </div>
+    <img src="food.png" class="a" style="position: absolute;">
+
+    <div id="formResponse" class="form-response">KINDLY ENTER THE CREDENTIALS TO ORDER FOOD<br>
+    </div>
+    <button type="submit" class="btn" id="button1" style="display: none; " onclick="showDetails()">Continue</button>
+
+    <img src="OIP__7_-removebg-preview.png" class="a"
+        style="margin-left: 1000px; height: 500px; width: 600px; position: absolute;">
+    <br>
+    <br>
+    <hrstyle="margin-top: 90px>
+        <hr>
+        <footer style="margin-top: 90px; margin-left: -120px; width: 100%;">
+            <div class="container1" style="display: flex;
+        justify-content: space-between;
+        margin-top: 0px;
+        margin-left: -1200px;
+        width: 100%;">
+                <div class="row1" style="margin-left: 50px;  display: flex;
+          flex-direction: row;
+          justify-content: space-between;">
+                    <div class="footer-col1">
+                        <h4 class="TEXT">COMPANY</h4>
+                        <ul style="color: blue;">
+                            <li><a href="founder.html">
+                                    <pre>ABOUT                                                                                                                                                                                                                                                                </pre>
+                                    us &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                </a></li>
+                            <li><a href="menu.html">MENU</a></li>
+                            <li><a href="order.html">LOGIN PAGE</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="TEXT">
+                            <pre>GET HELP </pre>
+                        </h4>
+                        <ul>
+                            <br>
+                            <li><a href="contact/contact.html" style="font-weight: 700;">Contact</a></li>
+                            <li>Office details: NIT KURUKSHETRA (THE FIVE) NEAR CHAKRADHAR BHAWAN H-3</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="TEXT">FOLLOW US</h4>
+                        <BR>
+                        <BR>
+                        <a href="www.facebook.com"><i class="fab fa-facebook face"> </i></a>
+                        <a href="www.twitter.com"><i class="fab fa-twitter"> </i></a>
+                        <a href="www.instagram.com"><i class="fab fa-instagram"> </i></a>
+                        <a href="www.linkedin.com"><i class="fab fa-linkedin"> </i></a>
+                    </div>
+
+
+                </div>
+
+            </div>
+            </div>
+        </footer>
+        <script>
+            // Get the username from the previous page
+            const params = new URLSearchParams(window.location.search);
+            const username = params.get('username');
+            document.getElementById('username').textContent = username;
+            function handleSubmit(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var formResponse = document.getElementById("formResponse");
+    var phoneNumberPattern = /^\d{10}$/;
+  
+    if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+        formResponse.innerHTML = "<p>Please fill in all the fields</p>";
+        document.getElementById("button1").style.display = "none"; // Hide the second continue button
+        return;
+    }
+  
+    if (!phoneNumberPattern.test(message)) {
+        formResponse.innerHTML = "<p>Please enter a valid 10-digit phone number</p>";
+        document.getElementById("button1").style.display = "none"; // Hide the second continue button
+        return;
+    }
+  
+    formResponse.innerHTML = "<p>Name: " + name + "</p><p>Hostel Name: " + email + "</p><p>Phone Number: " + message + "</p>";
+    
+    // Show the second continue button only if all fields are filled
+    if (name.trim() !== '' && email.trim() !== '' && message.trim() !== '') {
+        document.getElementById("button1").style.display = "block";
+    }
+}
+
+
+
+            function show() {
+                document.getElementById("button1").style.display = "block";
+            }
+
+            function showDetails() {
+                const detailsHtml = document.getElementById("formResponse").innerHTML;
+                localStorage.setItem("detailsHtml", detailsHtml);
+                window.open("details.html");
+            }
+        </script>
+
+</body>
+
+</html>

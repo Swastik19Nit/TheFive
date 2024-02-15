@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="orderPlaced.css">
+
+</head>
+<body>
+    <div id="orderContainer">
+        <img id="checkImage" src="images/qr.jpg"> 
+        <h1 style="color: #ffe5a5;" id="checkHeading"> UPI Payment </h1>
+        <p id="checkText"></p>
+        <button id="checkButton" onclick="verify()">Verify</button>
+    </div>
+    <script>
+        function verify(){
+            document.getElementById("checkImage").src="images/processing.gif";
+            document.getElementById("checkHeading").innerHTML=" Processing ";
+            document.getElementById("checkText").innerHTML="";
+            document.getElementById("checkButton").style.display="none";
+            
+            const myTimeout = setTimeout(change, 2500);
+        }
+        function change() {
+            document.getElementById("checkImage").src="images/done2.gif";
+            document.getElementById("checkHeading").innerHTML=" Order Placed Successfully! ";
+            document.getElementById("checkText").innerHTML=" We've sent you an email with the order details. ";
+            document.getElementById("checkButton").innerHTML="Back to Home";
+            document.getElementById("checkButton").style.margin="auto";
+            document.getElementById("checkButton").style.display="block";
+            document.getElementById("checkButton").onclick=done;
+
+        }
+        function done(){
+            location.replace("index.html")
+        }
+    </script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Five</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto+Condensed:wght@300&family=Tilt+Prism&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Import Font Awesome -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!-- or -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <style>
+    body{
+            line-height: 1.5;
+            font-family: 'Poppins',sans-serif;
+        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .large-image {
+      width: 38%;
+      margin-right: 10px;
+
+    }
+
+    .large-image img {
+      max-width: 100%;
+      height: 460px;
+      margin-left: 20px;
+      border-radius: 2%;
+    }
+
+    .small-images {
+      width: 58%;
+      margin-right: 12px;
+
+
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+      flex-basis: 74%;
+    }
+
+    .col {
+      position: relative;
+      width: calc(25% - 5px);
+      margin-right: 10px;
+
+    }
+
+    .col:last-child {
+      margin-right: 0;
+    }
+
+    .col img {
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 1/0.95;
+      border-radius: 2%;
+    }
+
+    .description-box {
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      width: 100%;
+      padding: 5px;
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      color: tomato;
+      font-weight: 700;
+    }
+
+
+    input[type="number"] {
+      width: 50px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+
+    button#increment,
+    button#decrement {
+      display: inline-block;
+      padding: 5px 10px;
+      border: none;
+      background-color: #ff8300;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+
+    button#increment:disabled {
+      background-color: #ccc;
+      color: #666;
+      cursor: default;
+    }
+
+
+    button#decrement:disabled {
+      background-color: #ccc;
+      color: #666;
+      cursor: default;
+    }
+
+    .order-box {
+      background-color: #4CAF50;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: crimson;
+    }
+
+    button {
+      background-color: #ff5e00;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff8300;
+    }
+
+    #details {
+      margin-left: 1200px;
+      margin-top: 0px;
+    }
+
+    @keyframes glowing {
+      0% {
+        color: #fff;
+        text-shadow: 0 0 10px #fff;
+      }
+
+      50% {
+        color: orange;
+        text-shadow: 0 0 20px orange;
+      }
+
+      100% {
+        color: #fff;
+        text-shadow: 0 0 10px #fff;
+      }
+    }
+
+    .animation-off {
+      animation: none !important;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      color: var(--text-color);
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+
+    .user span {
+      color: var(--text-color);
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+
+    .logo i {
+      color: var(--main-color);
+      font-size: 1.7rem;
+      margin-right: 3px;
+    }
+
+    header {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 28px 12%;
+      transition: all .50s ease;
+    }
+    .container1{
+            max-width:1170px;
+            margin:auto;
+        }
+        /* Flexbox row for the footer columns */
+        .row1{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        /* Remove list styling for the footer links */
+        ul{
+            list-style:none;
+        }
+        /* Styling for the footer section */
+        .footer1{
+            background-color:black;
+            padding:70px 0;
+        }
+        /* Styling for the footer columns */
+        .footer-col1{
+            width:25%;
+            padding:0 15px;
+        }
+        /* Styling for the footer headings */
+        .footer-col1 h4{
+            font-size:18px;
+            color:#ffffff;
+            text-transform: capitalize;
+            margin-bottom: 30px;
+        }
+        /* Styling for the heading underline */
+        .footer-col1 h4::before{
+            content: '';
+            position:absolute;
+            left:0;
+            bottom: -10px;
+            background-color:#ffffff;
+            height:2px;
+            box-sizing:border-box;
+            width:50px;
+        }
+        /* Styling for the footer links */
+        .footer-col1 ul li:not(:last-child){
+            margin-bottom:10px;
+        }
+        .footer-col1 ul li a{
+            font-size:16px;
+            text-transform: capitalize;
+            color:#ffffff;
+            text-decoration:none;
+            font-weight:300;
+            color:#bbbbbb;
+            display:block;
+            transition:all 0.3s ease;
+        }
+        /* Styling for the footer link hover */
+        .footer-col1 ul li a:hover{
+            color:orange;
+            padding-left: 8px;
+        }
+        /* Styling for the social links section */
+        .footer-col1 .social-links a{
+            display:inline-block;
+            height:40px;
+            width:40px;
+            background-color:rgba(red, green, blue, alpha);
+            margin:0 10px 10px 0;
+            text-align:center;
+            line-height:40px;
+            border-radius: 100%;
+            color:#ffffff;
+            transition:all 0.5s ease;
+        }
+        /* Styling for the social link hover */
+        .footer-col1 .social-links a:hover{
+            color:orange;
+            background-color:#ffffff;
+        }
+  </style>
+</head>
+
+<body>
+
+  <div class="boxx">
+    <img src="538303.png" alt="Large Image" style="height: 50px ; width: 50px; margin-left: 1200px; margin-top: 20px;">
+    <div id="details"></div>
+  </div>
+  <header>
+    <a href="#" class="logo"><i class='bx bxs-home-heart'></i><span>The Five</span></a>
+  </header>
+
+  <h1
+    style="font-family: 'Arvo', serif ; color:#ff8300 ; font-size: 60px; margin-left: 70px; margin-top: -50px; animation: glowing 2s ease-in-out infinite;">
+    PLEASE ORDER THE FOOD ITEMS</h1>
+  <br>
+  <hr style="height: 5px; background-color: #ff8300" >
+  <br>
+  <div class="image-gallery">
+    <div class="large-image">
+      <img src="OIP (2).jpg" alt="Large Image">
+
+
+    </div>
+    <div class="small-images">
+      <div class="row">
+        <div class="col">
+          <img src="images\roti1.jpg" alt="Small Image" id="me">
+          <div class="description-box">Roti Tawa Butter</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">9</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="OIP (2).jpg" alt="Small Image" id="me">
+          <div class="description-box">Aloo Paratha</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">20</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images\roti2.jpg" alt="Small Image">
+          <div class="description-box">Aloo Pyaaz Paratha</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">25</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images\OIP.jpg" alt="Small Image">
+          <div class="description-box">Paneer Pyaaz paratha</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col">
+          <img src="images\gobi.jpg" alt="Small Image">
+          <div class="description-box">Gobi Paratha</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">35</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images\egg.jpg" alt="Small Image">
+          <div class="description-box">Egg Paratha</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images\pizza.jpg" alt="Small Image">
+          <div class="description-box">Pizza Paratha</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images\mixws.jpg" alt="Small Image">
+          <div class="description-box">Sprouts Paratha</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">35</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="image-gallery">
+    <div class="large-image">
+      <img src="images/chilli.jpg" alt="Large Image">
+
+    </div>
+    <div class="small-images">
+      <div class="row">
+        <div class="col">
+          <img src="OIP (4).jpg" alt="Small Image" id="me">
+          <div class="description-box">Veg Chowmein</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images/eggc.jpg" alt="Small Image" id="me">
+          <div class="description-box">Egg Chowmein</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images/momos.jpg" alt="Small Image">
+          <div class="description-box">Momos(steam or fry)</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/grill.jpg" alt="Small Image">
+          <div class="description-box">Grill Sandwich</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <div class="row">
+        <div class="col">
+          <img src="images/chilli.jpg" alt="Small Image">
+          <div class="description-box">Chilli Potato
+          </div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">70</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/manu.jpg" alt="Small Image">
+          <div class="description-box">Manchurian</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">80</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/paneer.jpg" alt="Small Image">
+          <div class="description-box">Chilli Paneer</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">80</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/fried.jpg" alt="Small Image">
+          <div class="description-box">Fried Rice</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="image-gallery">
+    <div class="large-image">
+      <img src="images/dal.jpg" alt="Large Image">
+
+    </div>
+    <div class="small-images">
+      <div class="row">
+        <div class="col">
+          <img src="images/aloo.jpg" alt="Small Image" id="me">
+          <div class="description-box">Aloo Jeera</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">70</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images/pann.jpg" alt="Small Image" id="me">
+          <div class="description-box">Mutter Paneer</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">100</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images/mix.jpg" alt="Small Image">
+          <div class="description-box">Mix Veg</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">90</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/dal.jpg" alt="Small Image">
+          <div class="description-box">Daal Makhni</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">100</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col">
+          <img src="images/tamatar.jpg"Small Image">
+          <div class="description-box">Tamatar Pyaaz Fry</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">80</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/mutt.jpg" alt="Small Image">
+          <div class="description-box">Aloo Mutter</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">90</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="OIP.jpg" alt="Small Image">
+          <div class="description-box">Food Name 7</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">2</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="OIP (5).jpg" alt="Small Image">
+          <div class="description-box">Food Name 8</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">2</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="image-gallery">
+    <div class="large-image">
+      <img src="OIP (1).jpg" alt="Large Image">
+
+    </div>
+    <div class="small-images">
+      <div class="row">
+        <div class="col">
+          <img src="OIP (1).jpg" alt="Small Image" id="me">
+          <div class="description-box">Red Pasta</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images/white.jpg" alt="Small Image" id="me">
+          <div class="description-box">White Pasta</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images/plain.jpg" alt="Small Image">
+          <div class="description-box">Plain Maggi</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">30</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/OIP (1).jpg" alt="Small Image">
+          <div class="description-box">Veggie Maggie</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col">
+          <img src="images/bread.jpg" alt="Small Image">
+          <div class="description-box">Bread Omlette</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/pakoda.jpg" alt="Small Image">
+          <div class="description-box">Paneer Pakoda</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">30</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/balls.jpg" alt="Small Image">
+          <div class="description-box"> Paneer balls</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/taco.jpg" alt="Small Image">
+          <div class="description-box">Taco</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="image-gallery">
+    <div class="large-image">
+      <img src="images/proll.jpg" alt="Large Image">
+
+    </div>
+    <div class="small-images">
+      <div class="row">
+        <div class="col">
+          <img src="images/vroll.jpg" alt="Small Image" id="me">
+          <div class="description-box">Veg Roll</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">30</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images/eroll.jpg" alt="Small Image" id="me">
+          <div class="description-box">Egg Roll</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="images/eroll.jpg" alt="Small Image">
+          <div class="description-box">Double Egg roll</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/sroll.jpg" alt="Small Image">
+          <div class="description-box">Spring Roll</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col">
+          <img src="images/proll.jpg"Small Image">
+          <div class="description-box">Paneer Roll</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">50</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/croll.jpg" alt="Small Image">
+          <div class="description-box">Chowmein roll</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">60</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/burger.jpg" alt="Small Image">
+          <div class="description-box">Burger</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">40</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/pizz.jpg" alt="Small Image">
+          <div class="description-box">Pizza</div>
+          <div class="quantity">
+            <button id="decrement">-</button>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+            <button id="increment">+</button>
+            <span>Price: ₹<span id="price">80</span></span>
+          </div>
+          <div>
+            Total Price: ₹<span id="total-price">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="order-box">
+    <img src="knife-and-fork.png" style="margin-left:-70px">
+    <h2>Order Details</h2>
+    <h3>Dear user, your order summary is as follows:</h3>
+    <h3>
+      <div>Total price:  ₹<span id="total">0.00</span></div>
+    </h3>
+    <p id="order-summary"></p>
+    <button id="view-order-btn">Place Order</button>
+  </div>
+<hr style="margin-top: -10px; height: 3px;">
+<br>
+<br>
+    <footer style="margin-top: 3420px; margin-left: -120px; width: 100%;">
+      <div class="container1" style="display: flex;
+      justify-content: space-between;
+      margin-top: 0px;
+      margin-left: -1200px;
+      width: 100%;" >
+        <div class="row1" style="margin-left: 50px;  display: flex;
+        flex-direction: row;
+        justify-content: space-between;">
+          <div class="footer-col1">
+            <h4>COMPANY</h4>
+            <ul>
+              <li><a href="founder.html"><pre>About                                                                                                                                                                                                                                                                 </pre> us &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="order.html">Login Page</a></li>
+
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4><pre>GET HELP                                                                                            </pre ></h4>
+              <ul>
+              <br>
+              <li><a href="contact/contact.html" style="font-weight: 700;">Contact</a></li>
+              <li>Office details: NIT KURUKSHETRA (THE FIVE) NEAR CHAKRADHAR BHAWAN H-3</li>
+          </ul>
+          </div>
+          <div class="footer-col">
+            <h4>FOLLOW US</h4>
+            <div class="social-links" style="margin-right: -20px;">
+              <a href="www.facebook.com"><i class="fab fa-facebook face"> </i></a>
+              <a href="www.twitter.com"><i class="fab fa-twitter"> </i></a>
+              <a href="www.instagram.com"><i class="fab fa-instagram"> </i></a>
+              <a href="www.linkedin.com"><i class="fab fa-linkedin"> </i></a>
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  <script>
+
+    const detailsHtml = localStorage.getItem("detailsHtml");
+    document.getElementById("details").innerHTML = detailsHtml;
+
+    const incrementBtns = document.querySelectorAll('#increment');
+    const decrementBtns = document.querySelectorAll('#decrement');
+    const totalPriceElements = document.querySelectorAll('#total-price');
+
+    // Add event listeners to increment and decrement buttons
+    incrementBtns.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        // Get the quantity input and price element for this button
+        const quantityInput = event.target.parentNode.querySelector('#quantity');
+        const priceElement = event.target.parentNode.querySelector('#price');
+        const totalPriceElement = event.target.parentNode.nextElementSibling;
+
+        // Get the current quantity, price and total price
+        const quantity = parseInt(quantityInput.value);
+        const price = parseFloat(priceElement.textContent);
+        const totalPrice = parseFloat(totalPriceElement.querySelector('#total-price').textContent);
+
+        // Increase the quantity and total price
+        if (quantity < 10) {
+          quantityInput.value = quantity + 1;
+          totalPriceElement.querySelector('#total-price').textContent = (totalPrice + price).toFixed(2);
+          updateTotalPrice();
+        }
+      });
+    });
+
+    decrementBtns.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        // Get the quantity input and price element for this button
+        const quantityInput = event.target.parentNode.querySelector('#quantity');
+        const priceElement = event.target.parentNode.querySelector('#price');
+        const totalPriceElement = event.target.parentNode.nextElementSibling;
+
+        // Get the current quantity, price and total price
+        const quantity = parseInt(quantityInput.value);
+        const price = parseFloat(priceElement.textContent);
+        const totalPrice = parseFloat(totalPriceElement.querySelector('#total-price').textContent);
+
+        // Decrease the quantity and total price
+        if (quantity > 0) {
+          quantityInput.value = quantity - 1;
+          totalPriceElement.querySelector('#total-price').textContent = (totalPrice - price).toFixed(2);
+          updateTotalPrice();
+        }
+      });
+    });
+
+    function updateTotalPrice() {
+      let totalPrice = 0;
+      totalPriceElements.forEach((element) => {
+        const totalItemPrice = parseFloat(element.textContent);
+        totalPrice += totalItemPrice;
+      });
+      document.querySelector('#total').textContent = totalPrice.toFixed(2);
+    }
+
+    document.getElementById('view-order-btn').addEventListener('click', function() {
+        var totalPrice = parseFloat(document.getElementById('total').innerText);
+        
+        if (totalPrice === 0) {
+          alert('First select your order.');
+        } else {
+          window.location.href = 'pay.html'; 
+        }
+      });
+  </script>
+</body>
+
+</html>

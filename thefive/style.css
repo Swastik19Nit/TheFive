@@ -1,0 +1,231 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+.container1{
+    max-width:1170px;
+    margin:auto;
+    font-weight:300;
+}
+/* Flexbox row for the footer columns */
+.row1{
+    display:flex;
+    flex-wrap:wrap;
+}
+/* Remove list styling for the footer links */
+ul{
+    list-style:none;
+}
+/* Styling for the footer section */
+.footer1{
+    background-color:black;
+    padding:70px 0;
+    font-weight:300;
+}
+/* Styling for the footer columns */
+.footer-col1{
+    width:25%;
+    padding:0 15px;
+}
+
+/* Styling for the footer headings */
+.footer-col1 h4{
+    font-size:18px;
+    color:#ffffff;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-size: 100px;
+    font-weight:300;
+}
+/* Styling for the heading underline */
+.footer-col1 h4::before{
+    content: '';
+    position:absolute;
+    left:0;
+    bottom: -10px;
+    background-color:#ffffff;
+    height:2px;
+    box-sizing:border-box;
+    width:50px;
+    font-size: 100px;
+    font-weight:300;
+}
+/* Styling for the footer links */
+.footer-col1 ul li:not(:last-child){
+    margin-bottom:10px;
+}
+.footer-col1 ul li a{
+    font-size:16px;
+    text-transform: capitalize;
+    color:#ffffff;
+    text-decoration:none;
+    font-size: 100px;
+    font-weight:300;
+    color:#bbbbbb;
+    display:block;
+    transition:all 0.3s ease;
+}
+/* Styling for the footer link hover */
+.footer-col1 ul li a:hover{
+    color:orange;
+    padding-left: 8px;
+}
+/* Styling for the social links section */
+.footer-col1 .social-links a{
+    display:inline-block;
+    height:40px;
+    width:40px;
+    background-color:rgba(red, green, blue, alpha);
+    margin:0 10px 10px 0;
+    text-align:center;
+    line-height:40px;
+    border-radius: 100%;
+    color:#ffffff;
+    transition:all 0.5s ease;
+}
+.colo{
+    color:rgb(166, 159, 213);
+}
+/* Styling for the social link hover */
+.footer-col1 .social-links a:hover{
+    color:orange;
+    background-color:#ffffff;
+}
+:root {
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #e68026;
+}
+
+
+
+body {
+    height: 10vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+
+}
+
+.navbar a {
+
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all .50s ease;
+}
+
+.navbar a.active {
+    color: var(--main-color);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all .50s ease;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.user span {
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.logo i {
+    color: var(--main-color);
+    font-size: 1.7rem;
+    margin-right: 3px;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+.main {
+    display: flex;
+    align-items: center;
+}
+
+.main a {
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.50s ease;
+}
+
+.user {
+    display: flex;
+    text-align: center;
+}
+
+.user a {
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.50s ease;
+}
+
+.user i {
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 7px;
+
+}
+
+.main a:hover {
+    color: var(--main-color);
+}
+footer{
+    display: flex;
+     
+    position: absolute;
+    top: 95.4vh;
+    left: 92%;
+    margin-left: auto;
+     
+
+}
+footer i{
+      
+    color: var(--main-color);
+    font-size: 32px;
+    margin: 4px;
+}

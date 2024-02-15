@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Five</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto+Condensed:wght@300&family=Tilt+Prism&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!-- or -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <style>
+    /* Set the box width to 100% and center it horizontally */
+    .box1 {
+      width: 98%;
+      margin: 0 auto;
+
+    }
+
+    /* Set the box background color to lightgray */
+    .box-inner {
+      background-color: lightgray;
+      height: 40px;
+    }
+
+    /* Set the border radius to create rounded corners */
+    .box-inner {
+      border-radius: 120px;
+      color: orange;
+      font-weight: bolder;
+    }
+
+    .box-container {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -8 0px;
+    }
+
+    .product {
+      font-size: 1.5rem;
+      color: #ffe5a5;
+      font-weight: 3000;
+      margin-top: 10px;
+    }
+
+
+
+    /* Set the box background color to white */
+    .box {
+
+
+      width: 220px;
+      height: 180px;
+      margin-right: 20px;
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+    /* Add a bit of space around the images */
+    .box img {
+      width: 220px;
+      height: 180px;
+      margin-left: 10px;
+      margin-right: -20px;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 20px;
+      color: orange;
+      font-weight: bolder;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    :root {
+      --bg-color: #222327;
+      --text-color: #fff;
+      --main-color: #e68026;
+    }
+
+
+
+    body {
+      height: 100vh;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+
+
+    .navbar {
+
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 10px;
+
+    }
+
+    .navbar a {
+
+      color: var(--text-color);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 5px 0;
+      margin: 0px 30px;
+      transition: all .50s ease;
+    }
+
+    .navbar a.active {
+      color: var(--main-color);
+    }
+
+    header {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 28px 12%;
+      transition: all .50s ease;
+    }
+
+    footer {
+      display: flex;
+      position: absolute;
+      left: 92%;
+      margin-left: auto;
+
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      color: var(--text-color);
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+
+    .user span {
+      color: var(--text-color);
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+
+    .logo i {
+      color: var(--main-color);
+      font-size: 1.7rem;
+      margin-right: 3px;
+    }
+
+    .navbar a:hover {
+      color: var(--main-color);
+    }
+
+    .main {
+      display: flex;
+      align-items: center;
+    }
+
+    .main a {
+      margin-right: 25px;
+      margin-left: 10px;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.50s ease;
+    }
+
+    .user {
+      display: flex;
+      text-align: center;
+    }
+
+    .user a {
+      margin-right: 25px;
+      margin-left: 10px;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.50s ease;
+    }
+
+    .user i {
+      color: var(--main-color);
+      font-size: 28px;
+      margin-right: 7px;
+
+    }
+
+    .main a:hover {
+      color: var(--main-color);
+    }
+
+    footer i {
+
+      color: var(--main-color);
+      font-size: 32px;
+      margin: 4px;
+    }
+
+    img.selected {
+      border: 2px solid orange;
+      box-shadow: 0 0 10px orange;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-left: 30PX;
+      margin-right: 12px;
+      width: 90%;
+      font-size: 1REM;
+
+
+    }
+
+    th,
+    td {
+      font-weight: bold;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: orange;
+    }
+
+    td:first-child {
+      font-weight: bold;
+    }
+
+    td:last-child {
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .description-box {
+      position: absolute;
+      bottom: -30px;
+      /* Adjust as needed to position the box below the image */
+      left: 0;
+      width: 100%;
+      padding: 5px;
+      background-color: #fff;
+      box-shadow: 0 15px 3px rgba(0, 0, 0, 0.9);
+      color: tomato;
+      font-weight: 700;
+    }
+
+    .header__main {
+      padding-inline: 6rem;
+    }
+
+    .heading__primary-sub {
+      font-size: 5rem;
+      display: block;
+      font-weight: 400;
+    }
+
+    .heading__primary-main {
+      display: block;
+      font-size: 2rem;
+      font-family: "Bebas Neue", cursive;
+      line-height: 0.9;
+      font-weight: 900;
+      color: orange;
+      animation: glowing 2s ease-in-out infinite;
+    }
+
+    @keyframes glowing {
+      0% {
+        color: #fff;
+        text-shadow: 0 0 10px #fff;
+      }
+
+      50% {
+        color: orange;
+        text-shadow: 0 0 20px #ffa500;
+      }
+
+      100% {
+        color: #fff;
+        text-shadow: 0 0 10px #fff;
+      }
+    }
+
+    .animation-off {
+      animation: none !important;
+    }
+
+    .boxqwerty {
+      border: 2px dashed #ffa500;
+      background-color: transparent;
+      margin-left: 30px;
+      width: 96.5%;
+      height: 300px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .boxqwerty p {
+      font-size: 18px;
+      color: #ffa500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="logo"><i class='bx bxs-home-heart'></i><span>The Five</span></a>
+
+    <ul class="navbar">
+      <li><a href="index.html ">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="order.html">Order Now</a></li>
+      <li><a href="founder.html">Founders</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="background.html">Background</a></li>
+    </ul>
+
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <hr>
+  <br>
+  <div class="header__main">
+    <h1 class="heading__primary">
+      <span class="heading__primary-main">CLICK ON EACH IMAGE TO GET DETAILS OF THE CORRESPONDING MENU.</span>
+    </h1><BR>
+  </div>
+  <h2 id="head_"></h2>
+  <div class="boxqwerty" id="box_7">
+    <img src="dw21-mynt-23-e_1.png" style="width: 120px; height: 100px;">
+    <img src="dw21-mynt-23-e_1.png" style="width: 120px; height: 100px;">
+    <img src="dw21-mynt-23-e_1.png" style="width: 120px; height: 100px;">
+    <img src="dw21-mynt-23-e_1.png" style="width: 120px; height: 100px;">
+    <p style="margin-top: 20px ; font-size: xx-large; font-weight: 900;">CLICK ON ANY IMAGE
+      <img src="dw21-mynt-23-e_1.png" style="width: 120px; height: 100px;">
+      <img src="dw21-mynt-23-e_1.png" style="width: 120px; height: 100px;">
+      <img src="dw21-mynt-23-e_1.png" style="width: 120px; height: 100px;">
+      <img src="dw21-mynt-23-e_1.png" style="width: 120px; height: 100px;">
+    </p>
+  </div>
+  <table id="table1" style="display: none; width:450px;">
+    <thead>
+      <tr>
+        <th style="padding-right: 1320px;">Food Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>Roti Tawa Butter</td>
+      <td>9/-</td>
+    </tr>
+    <tr>
+      <td>Aloo Paratha</td>
+      <td>20/-</td>
+    </tr>
+    <tr>
+      <td>Aloo Pyaaz Paratha</td>
+      <td>25/-</td>
+    </tr>
+    <tr>
+      <td>Paneer Pyaaz paratha</td>
+      <td>35/-</td>
+    </tr>
+    <tr>
+      <td>Egg Paratha</td>
+      <td>40/-</td>
+    </tr>
+    <tr>
+      <td>Gobi Paratha</td>
+      <td>30/-</td>
+    </tr>
+  </table>
+
+  <table id="table2" style="display: none;">
+    <thead>
+      <tr>
+        <th style="padding-right: 1320px;">Food Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Veg Chowmein</td>
+        <td>40/-</td>
+      </tr>
+      <tr>
+        <td>Egg Chowmein</td>
+        <td>50/-</td>
+      </tr>
+      <tr>
+        <td>Momos (steam or fry)</td>
+        <td>50/-</td>
+      </tr>
+      <tr>
+        <td>Grill Sandwich</td>
+        <td>40/-</td>
+      </tr>
+      <tr>
+        <td>Chili Potato</td>
+        <td>70/-</td>
+      </tr>
+      <tr>
+        <td>Manchurian</td>
+        <td>80/-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table id="table3" style="display: none;">
+    <thead>
+      <tr>
+        <th style="padding-right: 1320px;">Food Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Aloo Jeera</td>
+        <td>70/-</td>
+      </tr>
+      <tr>
+        <td>Mutter Panner</td>
+        <td>100/-</td>
+      </tr>
+      <tr>
+        <td>Mix Veg</td>
+        <td>90/-</td>
+      </tr>
+      <tr>
+        <td>Daal Makhni</td>
+        <td>100/-</td>
+      </tr>
+      <tr>
+        <td>Tamatar Pyaaz Fry</td>
+        <td>80/-</td>
+      </tr>
+      <tr>
+        <td>Aloo Mutter</td>
+        <td>90/-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table id="table5" style="display: none;">
+    <thead>
+      <tr>
+        <th style="padding-right: 1320px;">Food Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Veg Roll</td>
+        <td>30/-</td>
+      </tr>
+      <tr>
+        <td>Paneer Roll</td>
+        <td>40/-</td>
+      </tr>
+      <tr>
+        <td>Egg roll(single egg)</td>
+        <td>30/-</td>
+      </tr>
+      <tr>
+        <td>Egg roll(double egg)</td>
+        <td>40/-</td>
+      </tr>
+      <tr>
+        <td>Spring Roll(4 pcs)</td>
+        <td>40/-</td>
+      </tr>
+      <tr>
+        <td>Egg Chowmein Roll/td>
+        <td>60/-</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table id="table4" style="display: none;">
+    <thead>
+      <tr>
+        <th style="padding-right: 1320px;">Food Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Red Pasta</td>
+        <td>40/-</td>
+      </tr>
+      <tr>
+        <td>White Pasta</td>
+        <td>50/-</td>
+      </tr>
+      <tr>
+        <td>Plain Maggi</td>
+        <td>30/-</td>
+      </tr>
+      <tr>
+        <td>Veggie Maggie</td>
+        <td>40/-</td>
+      </tr>
+      <tr>
+        <td>Bread Omlete</td>
+        <td>40/-</td>
+      </tr>
+      <tr>
+        <td>Paneer Pakoda</td>
+        <td>30/-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table id="table6" style="display: none;">
+    <thead>
+      <tr>
+        <th style="padding-right: 1320px;">Food Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ice Cream</td>
+        <td>MRP</td>
+      </tr>
+      <tr>
+        <td>Cold drink</td>
+        <td>MRP</td>
+      </tr>
+      <tr>
+        <td>Water</td>
+        <td>15/-</td>
+      </tr>
+      <tr>
+        <td>Tea</td>
+        <td>10/-</td>
+      </tr>
+      <tr>
+        <td>Hot Coffee</td>
+        <td>40/-</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <hr>
+  <h2 class="product"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Menu 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; Menu 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    Menu3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Menu 4 &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Menu 5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; Menu 6 </h2>
+  <div class="box-container">
+
+    <div class="box" id="box_1">
+      <img src="OIP (2).jpg" alt="Placeholder Image 1" onclick="selectImage(this)">
+    </div>
+
+    <div class="box" id="box_2">
+      <img src="OIP (4).jpg" alt="Placeholder Image 2" onclick="selectImage(this)">
+    </div>
+
+    <div class="box" id="box_3">
+      <img src="OIP (3).jpg" alt="Placeholder Image 3" onclick="selectImage(this)">
+    </div>
+    <div class="box" id="box_4">
+      <img src="OIP (1).jpg" alt="Placeholder Image 4" onclick="selectImage(this)">
+    </div>
+    <div class="box" id="box_5">
+      <img src="OIP (5).jpg" alt="Placeholder Image 5" onclick="selectImage(this)">
+    </div>
+    <div class="box" id="box_6">
+      <img src="OIP (6).jpg" alt="Placeholder Image 6" onclick="selectImage(this)">
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br><br>
+  <br>
+  <br>
+  <br>
+
+
+  <script>
+    const secondImg = document.getElementById("sd");
+    const image1 = document.getElementById("box_1");
+    const image2 = document.getElementById("box_2");
+    const image3 = document.getElementById("box_3");
+    const image4 = document.getElementById("box_4");
+    const image5 = document.getElementById("box_5");
+    const image6 = document.getElementById("box_6");
+    const image7 = document.getElementById("box_7");
+
+    const table1 = document.getElementById("table1");
+    const table2 = document.getElementById("table2");
+    const table3 = document.getElementById("table3");
+    const table4 = document.getElementById("table4");
+    const table5 = document.getElementById("table5");
+    const table6 = document.getElementById("table6");
+    const head = document.getElementById("head");
+
+
+    image1.addEventListener("click", function () {
+      table1.style.display = "block";
+      table2.style.display = "none";
+      table3.style.display = "none";
+      table4.style.display = "none";
+      table5.style.display = "none";
+      table6.style.display = "none";
+      image7.style.display = "none";
+
+    });
+
+    image2.addEventListener("click", function () {
+      table1.style.display = "none";
+      table2.style.display = "block";
+      table3.style.display = "none";
+      table4.style.display = "none";
+      table5.style.display = "none";
+      table6.style.display = "none";
+      image7.style.display="none";
+
+
+    });
+
+    image3.addEventListener("click", function () {
+      table1.style.display = "none";
+      table2.style.display = "none";
+      table3.style.display = "block";
+      table4.style.display = "none";
+      table5.style.display = "none";
+      table6.style.display = "none";
+      image7.style.display="none";
+
+    });
+
+    image4.addEventListener("click", function () {
+      table1.style.display = "none";
+      table2.style.display = "none";
+      table3.style.display = "none";
+      table4.style.display = "block";
+      table5.style.display = "none";
+      table6.style.display = "none";
+      image7.style.display="none";
+
+
+    });
+
+
+    image5.addEventListener("click", function () {
+      table1.style.display = "none";
+      table2.style.display = "none";
+      table3.style.display = "none";
+      table4.style.display = "none";
+      table5.style.display = "block";
+      table6.style.display = "none";
+      image7.style.display="none";
+
+
+    });
+
+    image6.addEventListener("click", function () {
+      table1.style.display = "none";
+      table2.style.display = "none";
+      table3.style.display = "none";
+      table4.style.display = "none";
+      table5.style.display = "none";
+      table6.style.display = "block";
+      image7.style.display="none";
+
+
+    });
+
+    function selectImage(img) {
+
+
+      var images = document.getElementsByTagName("img");
+      for (var i = 0; i < images.length; i++) {
+        images[i].classList.remove("selected");
+      }
+
+
+      img.classList.add("selected");
+    }
+    function toggleAnimation() {
+      const animatedText = document.querySelector('.animated-text');
+      animatedText.classList.toggle('animation-off');
+    }
+  </script>
+</body>
+
+</html>
